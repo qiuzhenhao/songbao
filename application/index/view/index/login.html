@@ -1,0 +1,46 @@
+<!doctype html>
+<html>
+
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <title>登录</title>
+  <meta name="description" content="这是一个 index 页面">
+  <meta name="keywords" content="index">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="renderer" content="webkit">
+  <meta http-equiv="Cache-Control" content="no-siteapp" />
+  <link type="image/x-icon" rel="shortcut icon" href="/static/icon/website.jpg"/>
+  <link rel="apple-touch-icon-precomposed" href="/static/icon/app-icon72x72@2x.png">
+  <meta name="apple-mobile-web-app-title" content="Amaze UI" />
+  <link rel="stylesheet" href="__CSS__/view_css/login.css">
+   <link rel="stylesheet" href="__CSS__/plugin/toastr/toastr.min.css">
+</head>
+
+<body >
+
+		<div class="login_box">
+		      <div class="login_l_img"><img src="/static/img/login-img.png" /></div>
+		      <div class="login">
+		          <div class="login_logo"><img src="/static/img/login_logo.png" /></a></div>
+		          <div class="login_name">
+		               <p>后台管理系统</p>
+		          </div>
+		          <form method="post">
+		              <input name="username" type="text"  value="用户名" v-model="username" onfocus="this.value=''" onblur="if(this.value==''){this.value='用户名'}">
+		              <span id="password_text" onclick="this.style.display='none';document.getElementById('password').style.display='block';document.getElementById('password').focus();" >密码</span>
+					  <input name="password" type="password" id="password" style="display:none;" v-model="password" onblur="if(this.value==''){document.getElementById('password_text').style.display='block';this.style.display='none'};"/>
+		              <input @click="loginClcik" value="{{isLogin ? '正在提交中...':'登录'}}" style="width:100%;" type="button" :disabled="isLogin">
+		          </form>
+		      </div>
+		      <div class="copyright">SONGBAO 松宝集团2018</div>
+		</div>
+
+
+  <script src="__JS__/jquery.min.js"></script>
+  <script src="__JS__/vue/vue.min.js"></script></body>
+  <script src="__JS__/vue/vue-resource.min.js"></script>
+  <script src="__JS__/vue.js/index/login.js"></script>
+  <script src="__JS__/plugin/toastr/toastr.min.js"></script>
+  </body>
+</html>

@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<meta name="renderer" content="webkit">
+	<!-- //360 6.X 以上可识别 -->
+	<meta name="force-rendering" content="webkit">
+	<!-- //其他双核可识别 -->
+	<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1"/>
+	<title>404</title>
+	<meta name="keywords" content="">
+	<meta name="description" content="">
+	<link type="image/x-icon" rel="shortcut icon" href="/static/icon/website.jpg"/>
+	<link href="__CSS__/view_css/error/error.css" rel="stylesheet">
+	 <script src="__JS__/jquery.min.js"></script>
+	<script type='text/javascript'>
+      $(document).ready(function(){
+  		/* 判断当前页面是否在iframe中  */
+ 		 if(self == top){
+ 			 $("#back").show();
+ 		 }
+      })
+	</script>
+</head>
+<body class="gray-bg">
+	<div class="middle-box text-center">
+		<h1>404</h1>
+		<h3 class="font-bold">无法打开这个链接！</h3>
+		<div class="error-desc">可能原因:内容已删除或访问的页面不存在！</div>
+		<div class="form-inline m-t" id="back">
+			<a href="/admin/Index/index" class="btn btn-primary">返回首页</a>
+		</div>
+	</div>
+</body>
+</html>
