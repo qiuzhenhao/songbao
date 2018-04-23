@@ -1,0 +1,131 @@
+<!doctype html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>松宝集团</title>
+    <meta name="description" content="首页">
+    <meta name="keywords" content="index">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="renderer" content="webkit">
+    <meta http-equiv="Cache-Control" content="no-siteapp" />
+    <link type="image/x-icon" rel="shortcut icon" href="/static/icon/website.jpg"/>
+    <link rel="apple-touch-icon-precomposed" href="/static/icon/website.jpg">
+    <meta name="apple-mobile-web-app-title" content="首页" />
+    <link rel="stylesheet" href="__CSS__/amazeui.min.css" />
+    <link rel="stylesheet" href="__CSS__/animate.min.css" />
+    <link rel="stylesheet" href="__CSS__/admin.css">
+    <link rel="stylesheet" href="__CSS__/app.min.css">
+
+</head>
+
+<body data-type="index">
+
+
+<header class="am-topbar am-topbar-inverse admin-header">
+    <div class="am-topbar-brand">
+        <a href="javascript:;" class="tpl-logo">
+            <img src="/static/icon/logo.jpg" alt="">
+        </a>
+    </div>
+    <div class="am-icon-list tpl-header-nav-hover-ico am-fl am-margin-right">
+
+    </div>
+
+    <button class="am-topbar-btn am-topbar-toggle am-btn am-btn-sm am-btn-success am-show-sm-only" data-am-collapse="{target: '#topbar-collapse'}"><span class="am-sr-only">导航切换</span> <span class="am-icon-bars"></span></button>
+
+    <div class="am-collapse am-topbar-collapse" id="topbar-collapse">
+
+        <ul class="am-nav am-nav-pills am-topbar-nav am-topbar-right admin-header-list tpl-header-list">
+
+            <li class="am-hide-sm-only"><a href="javascript:;" id="admin-fullscreen" class="tpl-header-list-link"><span class="am-icon-arrows-alt"></span> <span class="admin-fullText">开启全屏</span></a>
+            </li>
+
+
+            <li><a href="/index/Index/loginOut" class="tpl-header-list-link"><span class="am-icon-sign-out tpl-header-list-ico-out-size"></span></a></li>
+        </ul>
+    </div>
+</header>
+
+
+
+
+
+
+
+<div class="tpl-page-container tpl-page-header-fixed">
+
+
+    <div class="tpl-left-nav tpl-left-nav-hover">
+        <div class="tpl-left-nav-title">
+            <li class="am-dropdown tpl-left-nav-title-li" data-am-dropdown data-am-dropdown-toggle>
+                <a class="am-dropdown-toggle tpl-header-list-link" style="width: 100%;position: static">
+                    <span class="tpl-header-list-user-ico">
+                        <div class="common-headpic">
+                            <div class="main-headpic-block" id="userHeadpic" style="background: url('{$headPicture}');"></div>
+                        </div>
+                    </span>
+                </a>
+                <a class="am-dropdown-toggle tpl-header-list-link hidden-auto" style="text-align: center;width: 100%;padding: 5px 0;">
+                    <span>{$userName}</span>
+                </a>
+                <ul class="am-dropdown-content">
+                    <li><a class="nav-link" href="/admin/index/index"><span class="am-icon-bell-o"></span> 资料</a></li>
+                    <li><a href="/index/Index/loginOUt"><span class="am-icon-power-off"></span> 退出</a></li>
+                </ul>
+            </li>
+        </div>
+        <div class="tpl-left-nav-list">
+            <ul class="tpl-left-nav-menu">
+                <li class="tpl-left-nav-item">
+                    <a href="/admin/Index/home" class="nav-link active">
+                        <i class="am-icon-home"></i>
+                        <span>首页</span>
+                    </a>
+                </li>
+                {foreach $navArr as $key => $value}
+                <li class="tpl-left-nav-item">
+                    {if $value.child != null}
+                    <a class="nav-link tpl-left-nav-link-list">
+                        <i class="{$value.ICON}"></i>
+                        <span>{$value.NAV_NAME}</span>
+                        <i class="am-icon-angle-right tpl-left-nav-more-ico am-fr am-margin-right"></i>
+                    </a>
+                    <ul class="tpl-left-nav-sub-menu">
+                        <li>
+                            {foreach $value.child as $k => $v}
+                            <a href="{$v.ROUTER_URL}" class="nav-link">
+                                <i class="{$v.ICON}"></i>
+                                <span>{$v.NAV_NAME}</span>
+                            </a>
+                            {/foreach}
+                        </li>
+                    </ul>
+                    {else /}
+                    <a href="{$value.ROUTER_URL" class="nav-link tpl-left-nav-link-list">
+                        <i class="{$value.ICON}"></i>
+                        <span>{$value.NAV_NAME}</span>
+                    </a>
+                    {/if}
+                </li>
+                {/foreach}
+
+
+            </ul>
+        </div>
+    </div>
+
+    <div class="tpl-content-wrapper">
+        <iframe src="/admin/Index/home" scrolling="yes" frameborder="0" width="100%" height="100%" id="main-frame"></iframe>
+    </div>
+
+    <script src="__JS__/jquery.min.js"></script>
+    <script src="__JS__/amazeui.min.js"></script>
+    <script src="__JS__/iscroll.js"></script>
+    <script src="__JS__/echarts.min.js"></script>
+    <script src="__JS__/app.js"></script>
+    <script src="__JS__/vue.js/admin/index.js"></script>
+</body>
+
+</html>

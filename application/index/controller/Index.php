@@ -4,8 +4,8 @@ namespace app\index\controller;
 use app\common\Controller\Index as commonIndex;
 use think\Request;
 use think\Validate;
-use think\Db;
 use think\Session;
+use think\Db;
 
 class Index extends commonIndex
 {

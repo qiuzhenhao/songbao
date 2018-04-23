@@ -12,6 +12,7 @@ class Index extends Controller
 {
 	//判断是否已登录超时或已登录 statu=1 : 由登录页面发出  statu=2 : 由其他模块发出
     public function sessionCheck($statu){
+
         if($statu == 1){
             if(session('userId') || session('userId') != null || session('userId') != ''){
                 return $this->redirect('/admin/Index/index');
@@ -22,6 +23,7 @@ class Index extends Controller
                 return $this->redirect('/admin/Index/index');
             }
         }else if($statu == 2){
+        	 	
             if(!session('userId') || session('userId') == null || session('userId') == ''){
                 return $this->redirect('/index/Index/login');
             };
