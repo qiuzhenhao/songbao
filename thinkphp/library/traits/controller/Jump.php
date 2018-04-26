@@ -142,6 +142,7 @@ trait Jump
      */
     protected function redirect($url, $params = [], $code = 302, $with = [])
     {
+
         if (is_integer($params)) {
             $code   = $params;
             $params = [];

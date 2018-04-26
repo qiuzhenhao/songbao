@@ -23,6 +23,7 @@ class Index extends commonIndex
 
     //跳转至登录界面
     public function login(){
+    
         return view('login');
     }
 
